@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/firstPage/firstPage",
+    "pages/index/index",
+    "pages/regeo/regeo",
+    "pages/weather/weather",
+    "pages/poi/poi",
+    "pages/staticmap/staticmap",
+    "pages/navigation_car/navigation",
+    "pages/navigation_bus/navigation",
+    "pages/navigation_walk/navigation",
+    "pages/navigation_ride/navigation",
+    "pages/navigation_car_detail/navigation",
+    "pages/navigation_walk_detail/navigation",
+    "pages/navigation_ride_detail/navigation",
+    "pages/inputtips/input",
+    "pages/testPage/testPage",
+    "pages/det/det",
+    "pages/positionLine/positionLine",
+    "pages/firstOfNavigation/firstOfNavigation",
+    "pages/myTrackPage/myTrackPage",
+    "pages/endOfNavigation/endOfNavigation",
+    "pages/theXiangQingPage/theXiangQingPage"
+    ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarTitleText": "一个人，一座城",
+    "navigationBarTextStyle": "white"
+  },
+  "networkTimeout": {
+    "request": 6000
+  },
+  "sitemapLocation": "sitemap.json"
+}

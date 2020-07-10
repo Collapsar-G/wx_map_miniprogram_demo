@@ -1,0 +1,77 @@
+<!-- 引入导航模块的宏 render_nav_item -->
+{% from 'bootstrap/nav.html' import render_nav_item %}
+<!-- 下面是正常的 Bootstrap 页面代码，看起来很复杂，不过可以从官网上拷贝 -->
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %} Flask Bootstrap {% endblock %}</title> <!-- 定义标题块 -->
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon 32.ico') }}">
+<style type="text/css">
+html,body {
+    height: 100%;
+    background-image:url('https://cdn.jsdelivr.net/gh/yexihe-jpg/image/img/regist.jpg');
+    background-repeat:repeat-x;
+}
+
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    margin: 0 auto -200px;
+}
+
+ #push
+   height: 200px;
+ }
+ .footer {
+    border-top: 1px solid #e5e5e5;
+    color: #777;
+    padding: 19px 0;
+    background-color: #f5f5f5;
+}
+
+    </style>
+    {{ bootstrap.load_css() }}  <!-- 动态加载 Bootstrap 样式 -->
+</head>
+<body>
+
+<main class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">一座城，一个人</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item ">
+        <a class="nav-link" href="{{ url_for('login') }}">登录 <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{{ url_for('regist') }}">注册</a>
+      </li>
+                <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('static',filename='resource/book.pdf') }}">使用说明</a>
+      </li>
+            </ul>
+
+        </div>
+    </nav>
+    {% block content %}  <!-- 定义内容块 -->
+        <h1> Hello ! </h1>
+    {% endblock %}
+    <footer class="text-center">
+        {% block footer %} <!-- 定义页脚块 -->
+            <small> &copy; 2020 <a href="http://xiheye.club" title="yexihe's blog">yexihe's blog</a>
+            </small>
+        {% endblock %}
+    </footer>
+</main>
+
+<!-- 动态加载 Bootstrap js 脚本 -->
+{{ bootstrap.load_js() }}
+</body>
+</html>

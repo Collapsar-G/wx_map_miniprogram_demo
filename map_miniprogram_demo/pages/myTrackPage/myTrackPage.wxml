@@ -1,0 +1,28 @@
+<!--pages/myTrackPage/myTrackPage.wxml-->
+<view class="page">
+	<view class="page__bd">
+
+		<view class="weui-panel weui-panel_access" style="margin:0" bindtouchstart="handerTouchStart" bindtouchend="handerTouchEnd">
+
+			<view class="weui-panel__bd">
+				<scroll-view scroll-y="true" bindscrolltoupper="refreshNewsList" bindscrolltolower="loadMoreNews" style="height: {{scrollHeight}}px;" scroll-top="{{scrollTop}}" bindscroll="setCurrentYScroll">
+					<view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" wx:for="{{TianAPInewsList}}" wx:key="{{index}}" data-index="{{index}}">
+
+						<view bindtap="handerNavigator" data-id="{{item.id}}" data-start_address='{{item.start_address}}' data-start_longitude='{{item.start_longitude}}'  data-start_latitude='{{item.start_latitude}}' data-end_address='{{item.end_address}}' data-end_longitude='{{item.end_longitude}}'  data-end_latitude='{{item.end_latitude}}' data-city='{{item.city}}' class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+
+							<view class="weui-media-box__desc">{{item.start_address}}----{{item.end_address}}</view>
+							<view class="weui-media-box__info">
+								<view class="weui-media-box__info__meta">({{item.start_longitude}},{{item.start_latitude}})----({{item.end_longitude}},{{item.end_latitude}})</view>
+								<view class="weui-media-box__info__meta">{{item.time}}</view>
+							</view>
+						</view>
+						<view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+							<view class='text1'>{{item.city}}</view>
+						</view>
+
+					</view>
+				</scroll-view>
+			</view>
+		</view>
+	</view>
+</view>

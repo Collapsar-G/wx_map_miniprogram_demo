@@ -1,0 +1,54 @@
+{% extends 'index_bask.html' %}
+
+{% block content %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">仪表盘</a></li>
+        </ol>
+    </nav>
+    <div class="row">
+        <div class="col-sm-6">
+            <div  class="card bg-light">
+                <div class="card-body">
+                    <h5 class="card-title">用户数</h5>
+                    <p class="card-text">本站已累计用户<a
+                            style="font-size: x-large;font-weight: 700;color: #721c24">{{ wm }}</a>名</p>
+                    <a href="user" class="btn btn-primary">查看详情</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div  class="card bg-light">
+                <div class="card-body">
+                    <h5 class="card-title">管理员数</h5>
+                    <p class="card-text">本站拥有管理员<a
+                            style="font-size: x-large;font-weight: 700;color: #721c24">{{ um }}</a>名</p>
+                    <a href="authority_Management" class="btn btn-primary">查看详情</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div  class="card bg-light">
+                <div class="card-body">
+                    <h5 class="card-title">导航调用</h5>
+                    <p class="card-text">本站已累计调用导航接口<a
+                            style="font-size: x-large;font-weight: 700;color: #721c24">{{ nm }}</a>次</p>
+                    <a href="navigation" class="btn btn-primary">查看详情</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <h5 class="card-title">位置调用</h5>
+                    <p class="card-text">本站已累计调用位置记录接口<a
+                            style="font-size: x-large;font-weight: 700;color: #721c24">{{ sm }}</a>次</p>
+                    <a href="search" class="btn btn-primary">查看详情</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}

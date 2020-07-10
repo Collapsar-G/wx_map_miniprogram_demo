@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<image class="cu-avatar lg   margin-left" src="https://cdn.jsdelivr.net/gh/yexihe-jpg/image/img/%E5%A4%A9%E6%B0%94.png" mode="cover" style="opacity:{{0.3}}"bindtap="toWeatherPage"></image>
+
+<view class="container">
+
+	<image class='avatar' src="https://cdn.jsdelivr.net/gh/yexihe-jpg/image/img/%E8%B6%B3%E8%BF%B9.png" mode="cover" style="opacity:{{0.8}}" bindtap='toMyTrackPage'></image>
+
+	<view class='flex' style='margin-top:40rpx'>
+		<button style='width:600rpx;opacity:{{0.7}};background-color:black;color:#fff' class='flex-sub padding-sm margin-xs radius' bindtap='toMyposition'>我  的  位  置</button>
+
+	</view>
+	<view class='flex' style='margin-top:20rpx'>
+		<button style='width:600rpx;opacity:{{0.7}};background-color:black;color:#fff' class='flex-sub padding-sm margin-xs radius' bindtap='toTheHot'>搜  索  附  近</button>
+
+	</view>
+	<view class='flex' style='margin-top:20rpx'>
+		<button style='width:600rpx;opacity:{{0.7}};background-color:black;color:#fff' class='flex-sub padding-sm margin-xs radius' bindtap='toTheRoute'>路  线  规  划</button>
+
+	</view>
+</view>

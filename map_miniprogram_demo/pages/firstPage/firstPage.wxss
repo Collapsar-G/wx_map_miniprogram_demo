@@ -1,0 +1,52 @@
+/**index.wxss**/
+
+page {
+    overflow: hidden;
+    position: fixed;
+    margin: 0px;
+    background-size: 100% 100%;
+    background-image: url(https://cdn.jsdelivr.net/gh/yexihe-jpg/image/img/timg.gif);
+}
+
+.avatar {
+    height: 250rpx;
+    width: 250rpx;
+    border-radius: 0px;
+}
+
+.flex {
+    display: flex;
+}
+
+.padding-sm {
+    padding: 20rpx;
+}
+
+.margin-xs {
+    margin: 15rpx;
+}
+
+.flex-sub {
+    flex: 4;
+}
+
+.radius {
+    border-radius: 40rpx;
+}
+
+.margin-left {
+    margin-right: 30rpx;
+}
+
+.cu-avatar.lg {
+    width: 96rpx;
+    height: 96rpx;
+}
+
+.cu-avatar {
+    margin-left: 20rpx;
+    margin-top: 20rpx;
+    height: 100px;
+    width: 100px;
+    border-radius: 80px;
+}

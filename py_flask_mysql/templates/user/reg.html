@@ -1,0 +1,53 @@
+{% extends 'user/reg_base.html' %} {% block title %}注册{% endblock %} {% block content %}
+
+<body class="bg-light">
+    <form action="" method="POST">
+        <div class="card border-0" style="height: 2rem;background-color:  rgb(248,249,250,0);"></div>
+        <div class="sufee-login d-flex mx-auto flex-wrap">
+            <div class="container flex-wrap w-25">
+                <div class="login-content">
+                    <div class="login-form">
+                        <form>
+                            <div style="text-align: center;font-weight: 700;font-size: xx-large">注册</div>
+                            <div class="form-group">
+                                <label>用户名</label>
+                                <input name="username" type="text" class="form-control" placeholder="用户名" {% if data %}value="{{ data.username }}" {% endif %} data-parsley-required-message="用户名不能为空" data-parsley-type="alphanum" data-parsley-maxlength="16" required>
+                                <span class="glyphicon glyphicon-user form-control-feedback"></span> {% if message_u %}
+                                <p class="help-text">{{ message_u }}</p>
+                                {% endif %}
+                            </div>
+                            <div class="form-group">
+                                <label>电子邮箱</label>
+                                <input name="email" type="email" class="form-control" placeholder="电子邮箱(将作为唯一识别码)" {% if data %}value="{{ data.email }}" {% endif %} data-parsley-required-message="邮箱地址不能为空" data-parsley-type="email" data-parsley-maxlength="64" required>
+                                <span class="glyphicon glyphicon-envelope form-control-feedback"></span> {% if message_e %}
+                                <p class="help-text">{{ message_e }}</p>
+                                {% endif %}
+                            </div>
+                            <div class="form-group">
+                                <label>密码</label>
+                                <input name="password" type="password" id="password" class="form-control" placeholder="密码" {% if data %}value="{{ data.password }}" {% endif %} data-parsley-type="alphanum" data-parsley-required-message="请设置登录密码" data-parsley-length="[6,32]" required>
+                                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                            </div>
+                            <div class="form-group">
+                                <label>确认密码</label>
+                                <input name="password2" type="password" class="form-control" placeholder="重复输入密码" {% if data %}value="{{ data.password2 }}" {% endif %} data-parsley-type="alphanum" data-parsley-required-message="请重复登录密码" data-parsley-length="[6,32]" data-parsley-equalto="#password1"
+                                    required>
+                                <span class="glyphicon glyphicon-log-in form-control-feedback"></span> {% if message_p %}
+                                <p class="help-text">{{ message_p }}</p>
+                                {% endif %}
+                            </div>
+
+
+                            <div class="register-link m-t-15 text-center">
+                                <p>已经有账号了 ? <a href="{{ url_for('login') }}"> 登录</a></p>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30 d-flex mx-auto">立即注册</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card border-0" style="height: 2rem;background-color:  rgb(248,249,250,0);"></div>
+    </form>
+</body>
+{% endblock %}

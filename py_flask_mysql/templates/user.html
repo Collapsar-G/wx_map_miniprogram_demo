@@ -1,0 +1,31 @@
+{% extends 'ua_base.html' %}
+
+{% block content %} <!-- 替换页面内容 -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">用户管理</a></li>
+            <li class="breadcrumb-item active" aria-current="page">用户列表</li>
+        </ol>
+    </nav>
+
+    <table class="table table-striped">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">username</th>
+            <th scope="col">wx_openid</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td><a>{{ user.wx_nickname }}</a></td>
+                <td>{{ user.wx_openid }}</td>
+                <td><a href="{{ url_for('userdetail',user_id=user.id) }}">查看导航记录</a></td>
+                <td><a href="{{ url_for('userdetail_s',user_id=user.id) }}">查看位置记录</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

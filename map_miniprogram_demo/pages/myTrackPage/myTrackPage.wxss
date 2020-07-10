@@ -1,0 +1,42 @@
+/* pages/myTrackPage/myTrackPage.wxss */
+.scroll-view {
+  overflow: hidden;
+  width: 20rem;
+  height: 75rpx;
+  line-height: 64rpx;
+  white-space: nowrap;
+  background: #efefef;
+  color: rgb(0, 0, 0);
+  z-index: 3;
+  border-bottom: 1rpx solid #afacac;
+}
+
+.scroll-view-item {
+  display: inline-block;
+  margin: 14rpx;
+}
+
+.scroll-view-item.active {
+  color: #717577;
+}
+
+.scroll-view-manager {
+  padding-left: 20rpx;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: center;
+}
+
+.header {
+  width: 100%;
+  background-color: #efefef;
+  font-size: 35rpx;
+  display: flex;
+  align-items: center;
+  height: 68rpx;
+  position: relative;
+}
+.text1{
+  font-weight: 1000;
+  font-size: 30px
+}

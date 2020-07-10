@@ -1,0 +1,47 @@
+{% extends 'ua_base.html' %}
+
+{% block content %} <!-- 替换页面内容 -->
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">用户管理</a></li>
+    <li class="breadcrumb-item active" aria-current="page">权限管理</li>
+  </ol>
+</nav>
+
+<table class="table table-striped">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">username</th>
+      <th scope="col">email</th>
+      <th scope="col">authority</th>
+        <th scope="col">delete</th>
+    </tr>
+  </thead>
+  <tbody>
+   {% for user1 in users %}
+    <tr>
+      <td>{{user1.username}}</td>
+      <td>{{user1.email}}</td>
+        <form action="{{url_for('changeauthority')}}" method="post">
+            <input type="hidden" name="user_id" value="{{ user1.id }}">
+                {% if user1.authority == 1 %}
+            <td>
+                <button class="btn btn-secondary btn-sm">超级用户</button></td>
+                {% else %}
+            <td> <button class="btn btn-secondary btn-sm">记录管理员</button></td>
+                {% endif %}
+        </form>
+        <form action="{{url_for('delauthority')}}" method="post">
+            <input type="hidden" name="user_id" value="{{ user1.id }}">
+
+            <td>
+                <button class="btn btn-secondary btn-sm">删除用户</button></td>
+
+        </form>
+    </tr>
+
+
+ {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

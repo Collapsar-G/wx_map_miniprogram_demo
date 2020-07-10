@@ -1,0 +1,45 @@
+{% extends 'user/login_base.html' %} {% block title %}登录{% endblock %} {% block content %}
+
+<body class="bg-light">
+
+    <form action="" method="POST">
+        <div class="card border-0" style="height: 7rem;background-color:rgba(255, 255, 255, 0);"></div>
+        <div class="sufee-login d-flex mx-auto  flex-wrap ">
+            <div class="container   flex-wrap w-25">
+                <div class="login-content">
+                    <div class="login-form ">
+                        <form action="{{ url_for('login') }}">
+                            <div style="text-align: center;font-weight: 700;font-size: xx-large">登录</div>
+                            <div class="form-group">
+                                <label>电子邮箱</label>
+                                <input name="email" type="email" class="form-control" placeholder="电子邮箱" data-parsley-required-message="请输入您的登录邮箱" data-parsley-type="email" data-parsley-maxlength="64" {% if data %}value="{{ data.email }}" {% endif %} required>
+                                <span class="glyphicon glyphicon-envelope form-control-feedback"></span> {% if message_e %}
+                                <p class="help-text">{{ message_e }}</p>
+                                {% endif %}
+                            </div>
+                            <div class="form-group">
+                                <label>密码</label>
+                                <input name="password" type="password" class="form-control" placeholder="登录密码" {% if data %}value="{{ data.password }}" {% endif %} data-parsley-type="alphanum" data-parsley-required-message="请输入您的登录密码" data-parsley-length="[6,32]" required>
+                                <span class="glyphicon glyphicon-lock form-control-feedback"></span> {% if message_p %}
+                                <p class="help-text">{{ message_p }}</p>
+                                {% endif %}
+                            </div>
+
+
+                            <div class="social-login-content"> </div>
+                            <div class="register-link m-t-15 text-center">
+                                <p>还没有账号 ? <a href="{{ url_for('regist') }}"> 点这里注册</a></p>
+                                <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30 d-flex mx-auto">登录</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card border-0" style="height: 7rem;background-color:rgba(255, 255, 255, 0);"></div>
+
+
+    </form>
+</body>
+{% endblock %}
